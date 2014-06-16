@@ -1,3 +1,4 @@
+# Source: http://forums.rpgmakerweb.com/index.php?/topic/2167-new-event-type-sounds/?p=23782
 #==============================================================================
 # ** Lemony's Sound Emitting Events
 #------------------------------------------------------------------------------

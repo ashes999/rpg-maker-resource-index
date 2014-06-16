@@ -1,3 +1,4 @@
+# Source: http://forums.rpgmakerweb.com/index.php?/topic/415-proximity-events/?hl=%2Bproximity+%2Bevents
 ##Proximity Detection Script
 #Configuration consists of setting a default Proximity Range within the script
 #Usage: By setting an event to Parallel Process and using a Conditional Branch
