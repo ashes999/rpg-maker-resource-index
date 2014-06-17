@@ -1,3 +1,4 @@
+# Source: http://www.rpgmakervxace.net/topic/6145-advanced-game-time/
 #Advanced Game Time + Night/Day v1.5.1a
 #----------#
 #Features: Provides a series of functions to set and recall current game time
