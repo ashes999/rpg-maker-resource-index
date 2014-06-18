@@ -10,5 +10,6 @@
 files = Dir.glob('Scripts/*.rb')
 files.each do |f|
     contents = File.read(f)
-    eval contents
+    name = "#{f[0, f.rindex('.rb')]}"
+    require name
 end
