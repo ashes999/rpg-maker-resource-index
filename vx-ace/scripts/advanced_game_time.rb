@@ -1,5 +1,5 @@
 # Source: http://www.rpgmakervxace.net/topic/6145-advanced-game-time/
-#Advanced Game Time + Night/Day v1.5.1a
+#Advanced Game Time + Night/Day v1.5.1b
 #----------#
 #Features: Provides a series of functions to set and recall current game time
 #          as well customizable tints based on current game time to give the
@@ -288,6 +288,7 @@ module GameTime
   end
   def self.pause_tint(set)
     @pause_tint = set
+    $game_time_tint.force_update if !@pause_tint
   end
   def self.change(s = nil,m = nil,h = nil,d = nil,dw = nil, mn = nil,y = nil)
     $game_time.manual(s,m,h,d,dw,mn,y)
@@ -466,11 +467,15 @@ module GameTime
       create_contents
       update
       @old_tint = [0,0,0,0]
-      @old_time = 0
+      @old_time = -1
     end
     def create_contents
       self.bitmap = Bitmap.new(Graphics.width,Graphics.height)
       self.visible = false
+    end
+    def force_update
+      @old_time = -1
+      update
     end
     def update
       return use_default if SceneManager.scene.is_a?(Scene_Battle) and BATTLE_TINT
