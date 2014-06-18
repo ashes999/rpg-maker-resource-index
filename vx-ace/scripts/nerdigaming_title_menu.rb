@@ -1,7 +1,9 @@
 #==============================================================================
 #
-# -- NerdiGaming - Title Menu
-# -- Last Updated: November 9, 2012
+# -- Custom Title Menu
+# -- Author: ashes99 (current), NerdiGaming (original)
+# -- Last Updated: June 17, 2014
+# -- Version 1.3
 #
 #==============================================================================
 # - Introduction
@@ -18,7 +20,7 @@
 #==============================================================================
 # - Terms of Use
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-# - You MUST credit me: NerdiGaming
+# - You MUST credit the original author: NerdiGaming
 # - You MAY NOT re-distribute this script or any attached material to any
 #	 location without my permission.
 # - You MAY use this script or any attached material for non-commercial
@@ -29,24 +31,21 @@
 #==============================================================================
 # - Updates
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-# Version 1.2 - Fixed a Bug: If players held down an input button the menu
-#			   would not update.
-#			 - Removed unecessary overwrites; improving compatability
-#			   slightly.
-#			 - Removed some unecessary code.
-# Version 1.1 - Fixed a Bug: If a save file was present, New Game would be
-#			   selected instead of Continue.
-# Version 1   - Script Completed.
+# Version 1.2.1 -	Made some refactoring (internal changes). Hopefully, 1.3 will
+#					include the ability to easily add more menu items.
+# Version 1.2 - 	Fixed a Bug: If players held down an input button the menu
+#			   		would not update.
+#			 		- Removed unecessary overwrites; improving compatability slightly.
+#			 		- Removed some unecessary code.
+# Version 1.1 		- Fixed a Bug: If a save file was present, New Game would be
+#			   		selected instead of Continue.
+# Version 1   		- Script Completed.
 #==============================================================================
 
 module TitleMenu
  
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    # - Padding -
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     # Padding increases the distance between the New Game and Exit Game images
     # from the Continue Game image.
-    #
     #	 New  Game
     #    ->	  <-  This Space
     #  Continue  Game
@@ -55,46 +54,37 @@ module TitleMenu
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     PADDING = 5  # Default: 5
 
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    # - Offset -
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    # Offset moves the menu images in different directions.
-    #
-    # Positive Y = Moves the Menu Up    Example: 50
-    # Negative Y = Moves the Menu Down  Example: -50
-    #
-    # Positive X = Moves the Menu Left  Example: 50
-    # Negative X = Moves the Menu Right Example: -50
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # Offset moves the menu images in different directions (inverted cartesian plane).
     Y_OFFSET = 0  # Default: 0
     X_OFFSET = 0  # Default: 0
     
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    # - Image Names -
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     # This is where you specify what you want your images to be called.
-    #
-    # The images need to be placed in your Project\Graphics\System\ Folder.
+    # The images need to be placed in your Project\Graphics\System folder,
+    # eg. Project\Graphics\System\new-game.png, new-game-selected.png
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    NEW_IMAGE			   = "NewGame"
-    NEW_SELECTED_IMAGE	  = "NewGameSelected"
-    CONTINUE_IMAGE		  = "ContinueGame"
-    CONTINUE_SELECTED_IMAGE = "ContinueGameSelected"
-    EXIT_IMAGE			  = "ExitGame"
-    EXIT_SELECTED_IMAGE	 = "ExitGameSelected"
+    NEW_IMAGE			   	= 'new-game'
+    NEW_SELECTED_IMAGE	  	= "#{NEW_IMAGE}-selected"
+    CONTINUE_IMAGE		  	= 'continue-game'
+    CONTINUE_SELECTED_IMAGE	= "#{CONTINUE_IMAGE}-selected"
+    ACHIEVEMENTS_IMAGE		= 'achievements'
+    ACHIEVEMENTS_SELECTED_IMAGE = "#{ACHIEVEMENTS_IMAGE}-selected"
+    CREDITS_IMAGE			= 'credits'
+    CREDITS_SELECTED_IMAGE	= "#{CREDITS_IMAGE}-selected"
+    EXIT_IMAGE				= 'exit'
+    EXIT_SELECTED_IMAGE		= "#{EXIT_IMAGE}-selected"
+    
 
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    # - Continue Opacity -
-    #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     # Continue Opacity is how transparent the continue image will be when there
-    # are no save files present or if the continue option is disabled for some
-    # reason.
+    # are no save files present or if the continue option is disabled for some reason.
     #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     CONTINUE_DISABLED_OPACITY = 100  # Default: 100
     
 end # TitleMenu
 
 class Scene_Title < Scene_Base
+  HIDDEN_Z = -2
+  VISIBLE_Z = 10
+  
   #--------------------------------------------------------------------------
   # * Start processing
   #--------------------------------------------------------------------------
@@ -116,39 +106,48 @@ class Scene_Title < Scene_Base
     dispose_background
   end
   #--------------------------------------------------------------------------
-  # * Check User Input
+  # * Check User Input; called whenever the user changes input
   #--------------------------------------------------------------------------
   def check_input
+	hide_menu_items
+	
     case @command_window.index
-    when 0  # New Game Is Selected
-	  @spriteNewGameSelected.z = 15
-	  @spriteNewGame.z = -2
-	  
-	  @spriteContinueGameSelected.z = -2
-	  @spriteContinueGame.z = 10
-	     
-	  @spriteExitGameSelected.z = -2
-	  @spriteExitGame.z = 10
-    when 1  # Continue Game Is Selected
-	  @spriteNewGameSelected.z = -2
-	  @spriteNewGame.z = 10
-	     
-	  @spriteContinueGameSelected.z = 15
-	  @spriteContinueGame.z = -2
-	     
-	  @spriteExitGameSelected.z = -2
-	  @spriteExitGame.z = 10
-    when 2  # Exit Game Is Selected
-	  @spriteNewGameSelected.z = -2
-	  @spriteNewGame.z = 10
-	     
-	  @spriteContinueGameSelected.z = -2
-	  @spriteContinueGame.z = 10
-	     
-	  @spriteExitGameSelected.z = 15
-	  @spriteExitGame.z = -2
-    end
+		when 0  # New Game Is Selected
+		  @spriteNewGameSelected.z = VISIBLE_Z
+		  @spriteNewGame.z = HIDDEN_Z
+		when 1  # Continue Game Is Selected
+		  @spriteContinueGameSelected.z = VISIBLE_Z
+		  @spriteContinueGame.z = HIDDEN_Z
+		when 2 # Achievements
+		  @spriteAchievementsSelected.z = VISIBLE_Z
+		  @spriteAchievements.z = HIDDEN_Z
+		when 3 # Credits
+		  @spriteCreditsSelected.z = VISIBLE_Z
+		  @spriteCredits.z = HIDDEN_Z
+		when 4  # Exit Game Is Selected
+		  @spriteExitGameSelected.z = VISIBLE_Z
+		  @spriteExitGame.z = HIDDEN_Z
+		end
   end
+  
+  # private
+  def hide_menu_items
+	@spriteNewGameSelected.z = HIDDEN_Z
+	@spriteNewGame.z = VISIBLE_Z
+
+	@spriteContinueGameSelected.z = HIDDEN_Z
+	@spriteContinueGame.z = VISIBLE_Z
+	 
+	@spriteAchievementsSelected.z = HIDDEN_Z
+	@spriteAchievements.z = VISIBLE_Z
+	 
+	@spriteCreditsSelected.z = HIDDEN_Z
+	@spriteCredits.z = VISIBLE_Z
+		  
+	@spriteExitGameSelected.z = HIDDEN_Z
+	@spriteExitGame.z = VISIBLE_Z
+  end
+  
   #--------------------------------------------------------------------------
   # * Frame Update
   #--------------------------------------------------------------------------
@@ -191,14 +190,14 @@ class Scene_Title < Scene_Base
     @spriteContinueGame.bitmap = Cache.system( TitleMenu::CONTINUE_IMAGE )
     @spriteContinueGame.x = ( ( Graphics.width / 2 ) - (@spriteContinueGame.bitmap.width / 2 ) )
     @spriteContinueGame.y = ( ( Graphics.height / 2 ) - (@spriteContinueGame.bitmap.height / 2 ) )
-    @spriteContinueGame.z = 10
+    @spriteContinueGame.z = VISIBLE_Z
     
     # Creates The Continue Game Selected Image
     @spriteContinueGameSelected = Sprite.new
     @spriteContinueGameSelected.bitmap = Cache.system( TitleMenu::CONTINUE_SELECTED_IMAGE )
     @spriteContinueGameSelected.x = ( ( Graphics.width / 2 ) - ( @spriteContinueGameSelected.bitmap.width / 2 ) )
     @spriteContinueGameSelected.y = ( ( Graphics.height / 2 ) - ( @spriteContinueGameSelected.bitmap.height / 2 ) )
-    @spriteContinueGameSelected.z = -2
+    @spriteContinueGameSelected.z = HIDDEN_Z
     
     # Applies The Opacity If Continue Is Disabled
     if !@continue_enabled
@@ -211,28 +210,56 @@ class Scene_Title < Scene_Base
     @spriteNewGame.bitmap = Cache.system( TitleMenu::NEW_IMAGE )
     @spriteNewGame.x = ( ( Graphics.width / 2 ) - ( @spriteNewGame.bitmap.width / 2 ) )
     @spriteNewGame.y = ( ( Graphics.height / 2 ) - ( @spriteNewGame.bitmap.height / 2 ) ) - ( @spriteContinueGame.bitmap.height + TitleMenu::PADDING )
-    @spriteNewGame.z = -2
+    @spriteNewGame.z = HIDDEN_Z
     
     # Creates The New Game Selected Image
     @spriteNewGameSelected = Sprite.new
     @spriteNewGameSelected.bitmap = Cache.system( TitleMenu::NEW_SELECTED_IMAGE )
     @spriteNewGameSelected.x = ( ( Graphics.width / 2 ) - ( @spriteNewGameSelected.bitmap.width / 2 ) )
     @spriteNewGameSelected.y = ( ( Graphics.height / 2 ) - ( @spriteNewGameSelected.bitmap.height / 2 ) )  - ( @spriteContinueGame.bitmap.height + TitleMenu::PADDING )
-    @spriteNewGameSelected.z = -2
+    @spriteNewGameSelected.z = HIDDEN_Z
+    
+    # Creates The Achievements Image
+    @spriteAchievements = Sprite.new
+    @spriteAchievements.bitmap = Cache.system( TitleMenu::ACHIEVEMENTS_IMAGE )
+    @spriteAchievements.x = ( ( Graphics.width / 2 ) - ( @spriteAchievements.bitmap.width / 2 ) )
+    @spriteAchievements.y = @spriteContinueGame.bitmap.y + @spriteContinueGame.bitmap.height + TitleMenu::PADDING 
+    @spriteAchievements.z = HIDDEN_Z
+    
+    # Creates The Achievements Selected Image
+    @spriteAchievementsSelected = Sprite.new
+    @spriteAchievementsSelected.bitmap = Cache.system( TitleMenu::ACHIEVEMENTS_IMAGE_SELECTED )
+    @spriteAchievementsSelected.x = @spriteAchievements.x
+    @spriteAchievementsSelected.y = @spriteAchievements.y
+    @spriteNewGameSelected.z = HIDDEN_Z
+    
+	# Creates The Credits Image
+    @spriteCredits = Sprite.new
+    @spriteCredits.bitmap = Cache.system( TitleMenu::CREDITS_IMAGE )
+    @spriteCredits.x = ( ( Graphics.width / 2 ) - ( @spriteAchievements.bitmap.width / 2 ) )
+    @spriteCredits.y = @spriteAchievements.bitmap.y + @spriteAchievements.bitmap.height + TitleMenu::PADDING 
+    @spriteCredits.z = HIDDEN_Z
+    
+    # Creates The Achievements Selected Image
+    @spriteCreditsSelected = Sprite.new
+    @spriteCreditsSelected.bitmap = Cache.system( TitleMenu::CREDITS_IMAGE_SELECTED )
+    @spriteCreditsSelected.x = @spriteCredits.x
+    @spriteCreditsSelected.y = @spriteCredits.y
+    @spriteCreditsSelected.z = HIDDEN_Z
     
     # Creates The Exit Game Image
     @spriteExitGame = Sprite.new
     @spriteExitGame.bitmap = Cache.system( TitleMenu::EXIT_IMAGE )
-    @spriteExitGame.x = ( ( Graphics.width / 2 ) - ( @spriteExitGame.bitmap.width / 2 ) )
-    @spriteExitGame.y = ( ( Graphics.height / 2 ) - ( @spriteExitGame.bitmap.height / 2 ) ) + ( @spriteContinueGame.bitmap.height + TitleMenu::PADDING )
-    @spriteExitGame.z = 10
+    @spriteExitGame.x = @spriteCredits.x
+    @spriteExitGame.y = spriteCredits.bitmap.y + @spriteCredits.bitmap.height + TitleMenu::PADDING 
+    @spriteExitGame.z = VISIBLE_Z
     
     # Creates The Exit Game Selected Image
     @spriteExitGameSelected = Sprite.new
     @spriteExitGameSelected.bitmap = Cache.system( TitleMenu::EXIT_SELECTED_IMAGE )
-    @spriteExitGameSelected.x = ( ( Graphics.width / 2 ) - ( @spriteExitGameSelected.bitmap.width / 2 ) )
-    @spriteExitGameSelected.y = ( ( Graphics.height / 2 ) - ( @spriteExitGameSelected.bitmap.height / 2 ) ) + ( @spriteContinueGame.bitmap.height + TitleMenu::PADDING )
-    @spriteExitGameSelected.z = -2
+    @spriteExitGameSelected.x = @spriteExitGame.x
+    @spriteExitGameSelected.y = @spriteExitGame.y
+    @spriteExitGameSelected.z = HIDDEN_Z
     
     # Applies The Offset To The Continue Game Images
     @spriteContinueGame.x -= TitleMenu::X_OFFSET
@@ -245,6 +272,16 @@ class Scene_Title < Scene_Base
     @spriteNewGame.y -= TitleMenu::Y_OFFSET
     @spriteNewGameSelected.x -= TitleMenu::X_OFFSET
     @spriteNewGameSelected.y -= TitleMenu::Y_OFFSET
+    
+    # Applies The Offset to credits/achievements
+    @spriteCredits.x -= TITLEMENU::X_OFFSET
+    @spriteCredits.y -= TITLEMENU::Y_OFFSET
+    @spriteCreditsSelected.x -= TitleMenu::X_OFFSET
+    @spriteCreditsSelected.y -= TitleMenu::Y_OFFSET
+    @spriteAchievements.x -= TITLEMENU::X_OFFSET
+    @spriteAchievements.y -= TITLEMENU::Y_OFFSET
+    @spriteAchievementsSelected.x -= TitleMenu::X_OFFSET
+    @spriteAchievementsSelected.y -= TitleMenu::Y_OFFSET
     
     # Applies The Offset To The Exit Game Images
     @spriteExitGame.x -= TitleMenu::X_OFFSET
@@ -271,6 +308,16 @@ class Scene_Title < Scene_Base
     @spriteContinueGameSelected.bitmap.dispose
     @spriteContinueGameSelected.dispose
     
+    @spriteAchievements.bitmap.dispose
+    @spriteAchievements.dispose
+    @spriteAchievementsSelected.bitmap.dispose
+    @spriteAchievementsSelected.dispose
+    
+    @spriteCredits.bitmap.dispose
+    @spriteCredits.dispose
+    @spriteCreditsSelected.bitmap.dispose
+    @spriteCreditsSelected.dispose
+    
     @spriteExitGame.bitmap.dispose
     @spriteExitGame.dispose
     @spriteExitGameSelected.bitmap.dispose
@@ -280,41 +327,15 @@ class Scene_Title < Scene_Base
   # * Create Command Window
   #--------------------------------------------------------------------------
   def create_command_window
+	# Called when the window is first made.
     @command_window = Window_TitleCommand.new
     @command_window.set_handler(:new_game, method(:command_new_game))
     @command_window.set_handler(:continue, method(:command_continue))
-    @command_window.set_handler(:shutdown, method(:command_shutdown))
-    @command_window.z = -2
-    
-    case @command_window.index
-	  when 0  # New Game Is Selected
-	    @spriteNewGameSelected.z = 15
-	    @spriteNewGame.z = -2
-	     
-	    @spriteContinueGameSelected.z = -2
-	    @spriteContinueGame.z = 10
-	     
-	    @spriteExitGameSelected.z = -2
-	    @spriteExitGame.z = 10
-	  when 1  # Continue Game Is Selected
-	    @spriteNewGameSelected.z = -2
-	    @spriteNewGame.z = 10
-	     
-	    @spriteContinueGameSelected.z = 15
-	    @spriteContinueGame.z = -2
-	     
-	    @spriteExitGameSelected.z = -2
-	    @spriteExitGame.z = 10
-	  when 2  # Exit Game Is Selected
-	    @spriteNewGameSelected.z = -2
-	    @spriteNewGame.z = 10
-	     
-	    @spriteContinueGameSelected.z = -2
-	    @spriteContinueGame.z = 10
-	     
-	    @spriteExitGameSelected.z = 15
-	    @spriteExitGame.z = -2
-	  end
+    @command_window.set_handler(:achievements, method(:command_achievements))
+    @command_window.set_handler(:credits, method(:command_credits))
+    @command_window.set_handler(:shutdown, method(:command_shutdown))    
+    @command_window.z = HIDDEN_Z
+    @spriteNewGame.z = VISIBLE_Z
   end
   #--------------------------------------------------------------------------
   # * [Continue] Command
@@ -324,5 +345,11 @@ class Scene_Title < Scene_Base
 	  close_command_window
 	  SceneManager.call(Scene_Load)
     end
+  end
+  
+  def command_achievements
+  end
+  
+  def command_credits
   end
 end # Scene_Title
