@@ -3,7 +3,7 @@
 # -- Custom Title Menu
 # -- Author: ashes999 (current), NerdiGaming (original)
 # -- Last Updated: June 17, 2014
-# -- Version 1.3
+# -- Version 1.2.1
 #
 #==============================================================================
 # - Introduction
