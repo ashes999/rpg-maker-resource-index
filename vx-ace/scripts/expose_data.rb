@@ -1,6 +1,6 @@
 #========================================================================
 # ** Expose Data
-#    By: ashes999 (ashes999@yahoo.com)
+#    By: ashes999
 #    Version: 0.1
 #------------------------------------------------------------------------
 # * Description:
@@ -29,6 +29,11 @@ def simple_print(obj)
 	end
 end
 
+# Remove memory addresses so we don't get unnecessary "noise" in diffs
+def clean(string)
+	return string.gsub(/0x[0-9a-f]{7}/, '0xXXXXXXX')
+end
+
 files = Dir.glob('Data/*.rvdata2')
 Dir.mkdir('Data/Text') if !File.directory?('Data/Text')
 files.each do |f|
@@ -37,7 +42,7 @@ files.each do |f|
 	# Normal: object
 	# Classes without to_s: object.inspect	
 	#output = object.inspect
-	output = simple_print(object)
+	output = clean(simple_print(object))
 	File.open(f.sub('Data/', 'Data/Text/').sub('.rvdata2', '-data.txt'), 'w') { |out| out.write(output) }
 end
 
