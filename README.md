@@ -18,6 +18,7 @@ That's what this repository is. Feel free to browse and download whatever you wi
 
 - **[Advanced Game Time](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time.rb):** Set and recall the current game time; tints screen to give the appearance of time of day.
 - **[Auto Loader](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/auto_loader.rb):** Automatically loads all scripts in `/Scripts` so you can manage and version them like code instead of binary files.
+- **[Expose Data](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/expose_data.rb):** Converts .rvdata2 files into plain text so you can easily see/diff changes during development.
 - **[Jet Splash Screens](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/jet_splash_screens.rb):** Adds custom splash-screens to your game before the titlescreen.
 - **[Lemony's Current FPS](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/lemonys_current_fps.rb):** Gives you script access to the current in-game FPS.
 - **[Lemony's Sound-Emitting Events](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/lemonys_sound_emitting_events.rb):** Create sounds on events that change in volume based on your proximity to them.
