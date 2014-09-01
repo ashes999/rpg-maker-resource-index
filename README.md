@@ -1,19 +1,3 @@
-# What is this?
-
-RPG Maker is an awesome game-making tool by EnterBrain. The core game comes with some resources, and you can extend it in a multitude of ways. Unfortunately, there are two big problems with finding scripts right now:
-
-1. **Link Rot:** Sites move or go down. DropBox quotas run dry. You can't always get access to scripts you want.
-2. **Versions and Attribution:** most scripts are scattered in the RPG Maker forums (or elsewhere on the net)
-
-There is a need for a single, central repository of scripts (just like Ruby's Gems, Java's Maven, or C#'s NuGet). Users can always get access to scripts, and authors can update their scripts freely, giving us a *single, always up-to-date place to get access to scripts.*
-
-That's what this repository is. Feel free to browse and download whatever you wish. (Future versions may include a local search client.)
-
-**How you can help:**
-
-- **Add scripts:** Send us pull requests to add or update your scripts.
-- **Link scripts:** Link our [home page](http://ashes999.github.io/rpg-maker-resources) wherever you're sharing your scripts, so people can find a copy if your copy becomes unavailable.
-
 # Master List of Scripts
 
 - **[Advanced Game Time](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time.rb):** Set and recall the current game time; tints screen to give the appearance of time of day.
@@ -32,3 +16,20 @@ That's what this repository is. Feel free to browse and download whatever you wi
 - **[Word Wrapping](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/word_wrapping_by_killozapit.rb):** Automatically wraps messages to fit to the window width.
 - **[Xail System Title Screen](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_title.rb):** Customize the title screen to add new menu items, and icons. Requires the [XS Core](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb).
 - **[Xail System Credits](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_credits.rb):** Provides a mechanism for showing a credits screen. Integrates with Xail System Title Screen; requires the [XS Core](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb).
+
+
+# What is this?
+
+RPG Maker is an awesome game-making tool by EnterBrain. The core game comes with some resources, and you can extend it in a multitude of ways. Unfortunately, there are two big problems with finding scripts right now:
+
+1. **Link Rot:** Sites move or go down. DropBox quotas run dry. You can't always get access to scripts you want.
+2. **Versions and Attribution:** most scripts are scattered in the RPG Maker forums (or elsewhere on the net)
+
+There is a need for a single, central repository of scripts (just like Ruby's Gems, Java's Maven, or C#'s NuGet). Users can always get access to scripts, and authors can update their scripts freely, giving us a *single, always up-to-date place to get access to scripts.*
+
+That's what this repository is. Feel free to browse and download whatever you wish. (Future versions may include a local search client.)
+
+**How you can help:**
+
+- **Add scripts:** Send us pull requests to add or update your scripts.
+- **Link scripts:** Link our [home page](http://ashes999.github.io/rpg-maker-resources) wherever you're sharing your scripts, so people can find a copy if your copy becomes unavailable.
