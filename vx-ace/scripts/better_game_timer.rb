@@ -1,4 +1,9 @@
-#==============================================================================
+#========================================================================
+# ** Better Game Timer
+#    By: ashes999 (ashes999@yahoo.com)
+#    Version: 0.1
+#------------------------------------------------------------------------
+# * Description:
 #
 # -- Some extensions to make the timer a bit more useful and friendly.
 # -- Original methods by Tsukihime (to add/lose time and pause/resume)
@@ -13,9 +18,12 @@
 #  $game_timer.lose_time(15) # subtract 15 seconds
 #  $game_timer.pause
 #  $game_timer.resume
+#========================================================================
 
 # If remaining time is less than this many seconds, turn red. To disable, set to 0.
 CRITICAL_TIME_SECONDS = 5
+
+# End configuration
 
 class Game_Timer
 
