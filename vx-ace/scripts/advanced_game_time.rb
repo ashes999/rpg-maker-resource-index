@@ -1,5 +1,4 @@
-# Source: http://www.rpgmakervxace.net/topic/6145-advanced-game-time/
-#Advanced Game Time + Night/Day v1.5.1b
+#Advanced Game Time + Night/Day v1.5.2
 #----------#
 #Features: Provides a series of functions to set and recall current game time
 #          as well customizable tints based on current game time to give the
@@ -59,10 +58,9 @@
 #-- Script by: V.M of D.T
 #
 #- Questions or comments can be:
-#    posted on the thread for the script
 #    given by email: sumptuaryspade@live.ca
 #    provided on facebook: http://www.facebook.com/DaimoniousTailsGames
-#    posed on site: daimonioustails.wordpress.com
+#   All my other scripts and projects can be found here: http://daimonioustails.weebly.com/
 #
 #--- Free to use in any project, commercial or non-commercial, with credit given
 # - - Though a donation's always a nice way to say thank you~ (I also accept actual thank you's)
@@ -83,7 +81,7 @@ NOBATTLETIME = false
 #Clock is shown
 USECLOCK = true
 #Set to true to have the clock show up in the menu!
-USECLOCK_MENU = true
+USECLOCK_MENU = false
 #Set the format for the clock both in and out of menu
 #1. hh:mm am/pm
 #2. Sun dd hh:mm am/pm
@@ -206,7 +204,7 @@ PERIODS = [["Night",0,5],
            ["Afternoon",12,17],
            ["Evening",18,23]]
          
-$gametimeclockvisible = true
+$gametimeclockvisible = false
 #_# END CUSTOMIZATION #_#
          
 module GameTime
@@ -508,7 +506,10 @@ module GameTime
       return
       end
       self.visible = false
-      $game_map.effect_surface.change_color(1,0,0,0,0) if no_tint
+      if no_tint
+        $game_map.effect_surface.set_color(0,0,0)
+        $game_map.effect_surface.set_alpha(0)
+      end
       return if no_tint
       min = $game_time.min
       return if min == @old_time
@@ -516,7 +517,8 @@ module GameTime
       rgba = get_new_tint(min)
       return if rgba == @old_tint
       @old_tint = rgba
-      $game_map.effect_surface.change_color(1,rgba[0],rgba[1],rgba[2],rgba[3])
+      $game_map.effect_surface.set_color(rgba[0],rgba[1],rgba[2])
+      $game_map.effect_surface.set_alpha(rgba[3])
     end
     def no_tint
       return if $game_map.nil?
@@ -731,6 +733,9 @@ class Scene_Base
     game_time_update
     GameTime.update
   end
+  def clock_visible?(set)
+    return
+  end
 end
  
 class Scene_Map
@@ -770,6 +775,7 @@ class Scene_Map
   end
   def clock_visible?(set)
     @gametimeclock.visible = set
+    $gametimeclockvisible = set
   end
   def update_encounter
     if $game_player.encounter
