@@ -26,8 +26,13 @@ class Window_SaveFile < Window_Base
     return unless header
     game_time = header[:game_time]
     hour = game_time.hour
+    suffix = 'am'
+    if hour > 12 then
+      hour -= 12
+      suffix = 'pm'
+    end
     minute = game_time.min
     minute = "0#{minute}" if minute.to_s.length == 1
-    draw_text(x, y, width, line_height, "#{hour}:#{minute}", 2)	
+    draw_text(x, y, width, line_height, "#{hour}:#{minute} #{suffix}", 2)	
   end
 end
