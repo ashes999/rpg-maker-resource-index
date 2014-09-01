@@ -20,7 +20,6 @@
 - **[Xail System Title Screen](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_title.rb):** Customize the title screen to add new menu items, and icons. Requires the [XS Core](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb).
 - **[Xail System Credits](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_credits.rb):** Provides a mechanism for showing a credits screen. Integrates with Xail System Title Screen; requires the [XS Core](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb).
 - **[Yanfly Engine Ace - Ace Item Menu v1.02](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/ace_item_menu.rb):** A better item menu that displays items grouped categorically, as well as with large, custom images.
-=======
 
 
 # What is this?
