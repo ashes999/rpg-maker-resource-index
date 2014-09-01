@@ -17,6 +17,7 @@ That's what this repository is. Feel free to browse and download whatever you wi
 # Master List of Scripts
 
 - **[Advanced Game Time](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time.rb):** Set and recall the current game time; tints screen to give the appearance of time of day.
+- **[Advanced Game Time SaveScreen](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time_savescreen.rb):** Shows the current time instead of total play time on save games. Used with Advanced Game Time.
 - **[Auto Loader](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/auto_loader.rb):** Automatically loads all scripts in `/Scripts` so you can manage and version them like code instead of binary files.
 - **[Expose Data](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/expose_data.rb):** Converts .rvdata2 files into plain text so you can easily see/diff changes during development.
 - **[Image Title Menu](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/image_title_menu.rb):** A custom title-menu script that allows you to use images for the menu options, and specify your own custom commands.
