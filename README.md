@@ -1,19 +1,3 @@
-# What is this?
-
-RPG Maker is an awesome game-making tool by EnterBrain. The core game comes with some resources, and you can extend it in a multitude of ways. Unfortunately, there are two big problems with finding scripts right now:
-
-1. **Link Rot:** Sites move or go down. DropBox quotas run dry. You can't always get access to scripts you want.
-2. **Versions and Attribution:** most scripts are scattered in the RPG Maker forums (or elsewhere on the net)
-
-There is a need for a single, central repository of scripts (just like Ruby's Gems, Java's Maven, or C#'s NuGet). Users can always get access to scripts, and authors can update their scripts freely, giving us a *single, always up-to-date place to get access to scripts.*
-
-That's what this repository is. Feel free to browse and download whatever you wish. (Future versions may include a local search client.)
-
-**How you can help:**
-
-- **Add scripts:** Send us pull requests to add or update your scripts.
-- **Link scripts:** Link our [home page](http://ashes999.github.io/rpg-maker-resources) wherever you're sharing your scripts, so people can find a copy if your copy becomes unavailable.
-
 # Master List of Scripts
 
 - **[Advanced Game Time](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time.rb):** Set and recall the current game time; tints screen to give the appearance of time of day.
@@ -31,7 +15,26 @@ That's what this repository is. Feel free to browse and download whatever you wi
 - **[Points System](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/points_system.rb):** A simple system for giving and tracking points programatically.
 - **[QFRJ Misc Scripts](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/qfrj_misc_scripts.rb):** Some miscellaneous scripts related to events and party health
 - **[Vector Engine Light Effects](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/vector_engine_light_effects.rb):** Field-of-view style lighting. Requires the [basic module](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/vector_engine_basic_module.rb) and [light images](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/victor_engine_light_effects_images.zip).
+- **[Window Timer](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/window_timer.rb):** Allows you to add a timer for choices and message windows so that they automatically close after the specified time.
 - **[Word Wrapping](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/word_wrapping_by_killozapit.rb):** Automatically wraps messages to fit to the window width.
 - **[Xail System Title Screen](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_title.rb):** Customize the title screen to add new menu items, and icons. Requires the [XS Core](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb).
 - **[Xail System Credits](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_credits.rb):** Provides a mechanism for showing a credits screen. Integrates with Xail System Title Screen; requires the [XS Core](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb).
 - **[Yanfly Engine Ace - Ace Item Menu v1.02](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/ace_item_menu.rb):** A better item menu that displays items grouped categorically, as well as with large, custom images.
+=======
+
+
+# What is this?
+
+RPG Maker is an awesome game-making tool by EnterBrain. The core game comes with some resources, and you can extend it in a multitude of ways. Unfortunately, there are two big problems with finding scripts right now:
+
+1. **Link Rot:** Sites move or go down. DropBox quotas run dry. You can't always get access to scripts you want.
+2. **Versions and Attribution:** most scripts are scattered in the RPG Maker forums (or elsewhere on the net)
+
+There is a need for a single, central repository of scripts (just like Ruby's Gems, Java's Maven, or C#'s NuGet). Users can always get access to scripts, and authors can update their scripts freely, giving us a *single, always up-to-date place to get access to scripts.*
+
+That's what this repository is. Feel free to browse and download whatever you wish. (Future versions may include a local search client.)
+
+**How you can help:**
+
+- **Add scripts:** Send us pull requests to add or update your scripts.
+- **Link scripts:** Link our [home page](http://ashes999.github.io/rpg-maker-resources) wherever you're sharing your scripts, so people can find a copy if your copy becomes unavailable.
