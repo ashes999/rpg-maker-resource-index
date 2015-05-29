@@ -1,9 +1,9 @@
 #==============================================================================
 #
 # -- Custom Title Menu
-# -- Author: ashes999 (current), NerdiGaming (original)
-# -- Last Updated: June 17, 2014
-# -- Version 1.2.1
+# -- Author: ashes999 (current), NerdiGaming (previous)
+# -- Last Updated: May 28, 2015
+# -- Version 1.2.2
 #
 #==============================================================================
 # - Introduction
@@ -20,17 +20,12 @@
 #==============================================================================
 # - Terms of Use
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-# - You MUST credit the original author: NerdiGaming
-# - You MAY NOT re-distribute this script or any attached material to any
-#	 location without my permission.
-# - You MAY use this script or any attached material for non-commercial
-#	 projects.
-# - You MUST contact me before using this script or any attached material for
-#	 commercial projects.
+#  You can use this script for any purpose, commercial or non-ommercial.
 #
 #==============================================================================
 # - Updates
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+# Version 1.2.2 -       Contacted original author, who made license very permissive.
 # Version 1.2.1 -	Made some refactoring (internal changes). Hopefully, 1.3 will
 #					include the ability to easily add more menu items.
 # Version 1.2 - 	Fixed a Bug: If players held down an input button the menu
