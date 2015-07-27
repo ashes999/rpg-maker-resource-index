@@ -10,20 +10,20 @@
 #========================================================================
 def simple_print(obj)
 	if obj.is_a?(Hash)
-		str = "{\n"
+		str = "{\n\r"
 		obj.each do |k, v|		
-			str += "\t#{k} => #{v.inspect}\n"
+			str += "\t#{k} => #{v.inspect}\n\r"
 		end
 		str += "}"
 	elsif obj.is_a?(Array)
 		return obj.to_s
 	else
-		str = "{\n"
+		str = "{\n\r"
 			obj.instance_variables.each do |i|
 				value = obj.instance_variable_get(i)			
 				value = 'nil' if value.nil? || value == ''
 				value = simple_print(value) if value.is_a?(Table)
-				str += "\t#{i} => #{value.inspect}\n"
+				str += "\t#{i} => #{value.inspect}\n\r"
 			end
 		str += "}"
 	end
