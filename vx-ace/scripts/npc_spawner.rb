@@ -1,6 +1,10 @@
+# By Ashes999 (github.com/ashes999)
+# Creates random NPC via NpcSpawner::create_npc.
+
+# Graphics we can use
 GRAPHIC_FILES = [ 'People1', 'People2', 'People3', 'Peopl4', 'People5', 'People6', 'Peopl7', 'People8' ]
-DATA_MAP_ID = 2			# Map with our events
-NPC_TEMPLATE_IDS = [1]
+DATA_MAP_ID = 2			# Map with our events that we copy to create people
+NPC_TEMPLATE_IDS = [1]		# NPC IDs of events we can copy
 NPC_SPEEDS = [2, 3, 4, 5] # slower to faster
 NPC_FREQUENCIES = [2, 3, 4] # lower to higher
 
