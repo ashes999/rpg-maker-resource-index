@@ -7,6 +7,8 @@
 # -- Version 1.0
 
 # TODO: add persistence for save/load
+# Requires custom_save_system.rb
+
 module PointsSystem
 
   # Start: variables you can customize
