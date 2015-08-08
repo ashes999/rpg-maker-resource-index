@@ -1,5 +1,7 @@
 # Master List of Scripts
 
+NB: several checked-in scripts are missing from here.
+
 - **[Advanced Game Time](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time.rb):** Set and recall the current game time; tints screen to give the appearance of time of day.
 - **[Advanced Game Time Save Screen](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time_save_screen.rb):** Shows the current time instead of total play time on save games. Used with Advanced Game Time.
 - **[Auto Loader](https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/auto_loader.rb):** Automatically loads all scripts in `/Scripts` so you can manage and version them like code instead of binary files.
