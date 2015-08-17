@@ -3,7 +3,7 @@
 #      Data is automatically loaded and saved to the current save game.
 #=============================================================================
 # --- Author:			Haris1112 (hk12@live.ca), Ashes999 (ashes999@yahoo.com)
-# --- Version:			1.1.1
+# --- Version:			1.1.2
 #=============================================================================
 #  Use DataManager.set(key, value) to add an object,
 #  and DataManager.get(key) to get it back.
@@ -19,9 +19,10 @@ module DataManager
   end
   def self.extract_save_contents(contents)
     load_contents(contents)
-    @@contents.each do |k, v|
-	  @@contents[k] = contents[k]
-    end
+    
+    contents.each do |k, v|
+	    @@contents[k] = contents[k]
+    end    
   end
 
   # Saving
@@ -50,7 +51,7 @@ module DataManager
 	
     @@contents = {}
     @@initial_contents.each do |key, value|
-	  @@contents[key] = value
+	    @@contents[key] = value
     end
   end
   
