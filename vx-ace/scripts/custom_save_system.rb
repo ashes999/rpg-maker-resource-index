@@ -10,56 +10,52 @@
 #=============================================================================
 module DataManager
 
-  @@contents = {}
-  @@initial_contents = {}
-
+  @contents = {}
+  
   # Loading
   class << self
-    alias :load_contents :extract_save_contents
+    alias :old_extract_save_contents :extract_save_contents
+    alias :old_make_save_contents :make_save_contents
+    alias :old_setup_new_game :setup_new_game
   end
+    
   def self.extract_save_contents(contents)
-    load_contents(contents)
+    old_extract_save_contents(contents)
     
     contents.each do |k, v|
-	    @@contents[k] = contents[k]
+	    @contents[k] = contents[k]
     end    
+  end
+  
+  # Takes a function with a map argument: do whatever it is to set up parameters
+  # and stuff you need on a new-game, and/or things to reset between starting a
+  # new game and/or loading save games.
+  def self.setup(callback)
+    @callback = callback
   end
 
   # Saving
-  class << self
-    alias :save_contents :make_save_contents
-  end
   def self.make_save_contents
-    contents = save_contents
-    @@contents.each do |key, value|
+    contents = old_make_save_contents
+    @contents.each do |key, value|
       contents[key] = value
     end
 	
-	return contents
+    return contents
   end
   
-  class << self
-    alias :on_new_game :setup_new_game
-  end
-  def self.setup_new_game	
-    on_new_game
-	setup(@@initial_contents)
+  def self.setup_new_game    
+    Logger.log(Kernel.caller)
+    old_setup_new_game
+    @contents = {}
+    @callback.call(@contents)
   end
 
-  def self.setup(hash)	
-	@@initial_contents = hash
-	
-    @@contents = {}
-    @@initial_contents.each do |key, value|
-	    @@contents[key] = value
-    end
-  end
-  
   def self.get(key)
-    return @@contents[key]
+    return @contents[key]
   end
 
   def self.set(key, value)
-    @@contents[key] = value
+    @contents[key] = value
   end
 end
