@@ -27,25 +27,36 @@ class Game_Actor < Game_Battler
 end
  
 class Scene_Battle < Scene_Base
-  alias_method :original_execute_action, :execute_action
-  alias_method :original_process_action_end, :process_action_end
-  
+  alias_method :weaponskill_execute_action :execute_action  
   def execute_action     
     attacker = @subject
     action = attacker.current_action
     if $game_party.members.include?(attacker) && !action.nil? && action.attack?
       attacker.before_attack
-      @original_damage = {:attacker => attacker, :damage => action.item.damage, :formula => action.item.damage.formula}
+      @original_damage = {:attacker => attacker, :damage => action.item.damage, :formula => action.item.damage.formula, :effects => action.item.effects }
       action.item.damage.formula = "1.1 * (#{action.item.damage.formula})"      
     end
-    original_execute_action
+    weaponskill_execute_action
   end
   
+  alias_method :weaponskill_process_action_end :process_action_end  
   def process_action_end
-    original_process_action_end
-    return if @original_damage.nil?
-    
+    weaponskill_process_action_end
+    reset_attack
+  end
+  
+  alias_method :weaponskill_terminate :terminate
+  def terminate
+    reset_attack
+    weaponskill_terminate    
+  end
+  
+  private
+  
+  def reset_attack
+    return if @original_damage.nil?    
     @original_damage[:attacker].after_attack    
     @original_damage[:damage].formula = @original_damage[:formula] # reset
-  end      
+    @original_damage[:item].effects = @original_damage[:effects]   
+  end
 end
