@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('app', ['ngTable']);
-var githubRootUrl = "https://raw.githubusercontent.com/ashes999/rpg-maker-mv-resources/gh-pages/resources/vxa";
+var githubRootUrl = "https://raw.githubusercontent.com/ashes999/rpg-maker-resources/gh-pages/resources/vxa";
 
 angular.module('app').controller('ScriptsController', ['$scope', '$http', 'NgTableParams', 
 function ($scope, $http, NgTableParams)

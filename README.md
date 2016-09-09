@@ -1,6 +1,6 @@
 # RPG Maker MV Resources
 
-[View the website](http://ashes999.github.io/rpg-maker-mv-resources) where you can search for resources (eg. tilesets, portraits) and scripts (eg. time of day) for RPG Maker VXA games.
+[View the website](http://ashes999.github.io/rpg-maker-resources) where you can search for resources (eg. tilesets, portraits) and scripts (eg. time of day) for RPG Maker VXA games.
 
 **We keep a copy of everything.** You can still access scripts and resources even if the original author's website becomes unavailable.
 
