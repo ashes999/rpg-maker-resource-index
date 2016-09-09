@@ -1,104 +1,57 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html ng-app="app">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Rpg-maker-resources : A central repository for useful resources related to RPG Maker (VX Ace)." />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Rpg-maker-resources</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/ashes999/rpg-maker-resources">View on GitHub</a>
-
-          <h1 id="project_title">Rpg-maker-resources</h1>
-          <h2 id="project_tagline">A central repository for useful resources related to RPG Maker (VX Ace).</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/ashes999/rpg-maker-resources/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/ashes999/rpg-maker-resources/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="what-is-this" class="anchor" href="#what-is-this"><span class="octicon octicon-link"></span></a>What is this?</h1>
-
-<p>RPG Maker is an awesome game-making tool by EnterBrain. The core game comes with some resources, and you can extend it in a multitude of ways. Unfortunately, there are two big problems with finding scripts right now:</p>
-
-<ol>
-<li>
-<strong>Link Rot:</strong> Sites move or go down. DropBox quotas run dry. You can't always get access to scripts you want.</li>
-<li>
-<strong>Versions and Attribution:</strong> most scripts are scattered in the RPG Maker forums (or elsewhere on the net)</li>
-</ol><p>There is a need for a single, central repository of scripts (just like Ruby's Gems, Java's Maven, or C#'s NuGet). Users can always get access to scripts, and authors can update their scripts freely, giving us a <em>single, always up-to-date place to get access to scripts.</em></p>
-
-<p>That's what this repository is. Feel free to browse and download whatever you wish. (Future versions may include a local search client.)</p>
-
-<p><strong>How you can help:</strong></p>
-
-<ul>
-<li>
-<strong>Add scripts:</strong> Send us pull requests to add or update your scripts.</li>
-<li>
-<strong>Link scripts:</strong> Link our <a href="http://ashes999.github.io/rpg-maker-resources">home page</a> wherever you're sharing your scripts, so people can find a copy if your copy becomes unavailable.</li>
-</ul><h1>
-<a name="master-list-of-scripts" class="anchor" href="#master-list-of-scripts"><span class="octicon octicon-link"></span></a>Master List of Scripts</h1>
-
-<ul>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/advanced_game_time.rb">Advanced Game Time</a>:</strong> Set and recall the current game time; tints screen to give the appearance of time of day.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/auto_loader.rb">Auto Loader</a>:</strong> Automatically loads all scripts in <code>/Scripts</code> so you can manage and version them like code instead of binary files.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/expose_data.rb">Expose Data</a>:</strong> Converts .rvdata2 files into plain text so you can easily see/diff changes during development.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/image_title_menu.rb">Image Title Menu</a>:</strong> A custom title-menu script that allows you to use images for the menu options, and specify your own custom commands.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/jet_mouse_system.rb">Jet Mouse System</a>:</strong> Adds full mouse support tp RPG Maker: menus, moving on the map, interacting with events, etc.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/jet_splash_screens.rb">Jet Splash Screens</a>:</strong> Adds custom splash-screens to your game before the titlescreen.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/lemonys_current_fps.rb">Lemony's Current FPS</a>:</strong> Gives you script access to the current in-game FPS.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/lemonys_sound_emitting_events.rb">Lemony's Sound-Emitting Events</a>:</strong> Create sounds on events that change in volume based on your proximity to them.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/nerdigaming_title_menu.rb">NerdiGaming - Title Menu</a>:</strong> A custom title-menu script that allows you to use images for the menu options. (This script is no longer maintained; Image Title Menu succeeds it.)</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/points_system.rb">Points System</a>:</strong> A simple system for giving and tracking points programatically.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/qfrj_misc_scripts.rb">QFRJ Misc Scripts</a>:</strong> Some miscellaneous scripts related to events and party health</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/vector_engine_light_effects.rb">Vector Engine Light Effects</a>:</strong> Field-of-view style lighting. Requires the <a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/vector_engine_basic_module.rb">basic module</a> and <a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/victor_engine_light_effects_images.zip">light images</a>.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/word_wrapping_by_killozapit.rb">Word Wrapping</a>:</strong> Automatically wraps messages to fit to the window width.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_title.rb">Xail System Title Screen</a>:</strong> Customize the title screen to add new menu items, and icons. Requires the <a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb">XS Core</a>.</li>
-<li>
-<strong><a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_credits.rb">Xail System Credits</a>:</strong> Provides a mechanism for showing a credits screen. Integrates with Xail System Title Screen; requires the <a href="https://github.com/ashes999/rpg-maker-resources/blob/gh-pages/vx-ace/scripts/xail_system_core.rb">XS Core</a>.</li>
-</ul>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Rpg-maker-resources maintained by <a href="https://github.com/ashes999">ashes999</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
     
+    <link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.min.css">
+    <script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>
+  </head>
+  <body>
+    <div>
+      <p>
+        <a href="#" onclick="showScripts();">Scripts</a> |
+        <a href="#" onclick="showResources();">Resources</a> |
+        <a href="http://github.com/ashes999/rpg-maker-mv-resources">GitHub</a>
+      </p>
+    </div>
 
+    <div ng-controller="ScriptsController as controller">
+      <table id="scriptsTable" ng-table="controller.tableParams" class="table" show-filter="true">
+        <tr ng-repeat="script in $data">
+            <td title="Name" filter="{ name: 'text'}" sortable="'name'">
+                {{script.name}}</td>
+            <td title="Description" filter="{ description: 'text'}" sortable="'description'">
+                {{script.description}}</td>
+            <td title="Links">
+                <a ng-href="{{script.url}}">Home Page</a><br />
+                <a ng-href="{{controller.githubRootUrl}}/resources/scripts/{{script.fileName}}">Repository Version</a>
+                </td>
+        </tr>
+      </table>
+    </div>
+    
+    <div ng-controller="ResourcesController as controller">
+      <table id="resourcesTable" ng-table="controller.tableParams" class="table" show-filter="true">
+        <tr ng-repeat="resource in $data">
+            <td title="Name" filter="{ name: 'text'}" sortable="'name'">
+                {{resource.name}}</td>
+            <td title="Description" filter="{ description: 'text'}" sortable="'description'">
+                {{resource.description}}</td>
+            <td title="Links">
+                <a ng-href="{{resource.url}}">Home Page</a><br />
+                <a ng-href="{{controller.githubRootUrl}}/resources/graphics/{{resource.fileName}}">Repository Version</a>
+                </td>
+        </tr>
+      </table>
+    </div>
+
+    <script src="functions.js"></script>    
+    <script src="scripts.js"></script>
+    <script src="scriptsRepository.js"></script>
+    <script src="resources.js"></script>
+    <script src="resourcesRepository.js"></script>
   </body>
 </html>
+
