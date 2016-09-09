@@ -39,9 +39,11 @@
                 {{resource.name}}</td>
             <td title="Description" filter="{ description: 'text'}" sortable="'description'">
                 {{resource.description}}</td>
+            <td title="Sub-Type" filter="{ subtype: 'text' }" sortable="'subtype'">
+                {{resource.subtype}}</td>
             <td title="Links">
                 <a ng-href="{{resource.url}}">Home Page</a><br />
-                <a ng-href="{{controller.githubRootUrl}}/graphics/{{resource.fileName}}">Repository Version</a>
+                <a ng-href="{{controller.githubRootUrl}}/graphics/{{resource.subtype}}/{{resource.fileName}}">Repository Version</a>
                 </td>
         </tr>
       </table>

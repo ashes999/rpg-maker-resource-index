@@ -4,13 +4,15 @@
             "name": "Yoda",
             "description": "Portrait of Yoda from Star Wars",
             "url": "https://grandmadebslittlebits.wordpress.com/2015/08/13/edeus-modernscifi-portraits/",
-            "fileName": "faces/yoda.png"
+            "subtype": "faces",
+            "fileName": "yoda.png"
         },
         {
             "name": "Beach Tiles",
             "description": "Tiles for beach towels, umbrellas, sea shells, starfish, a lifeguard hut, and a beach ball",
             "url": "https://grandmadebslittlebits.wordpress.com/2015/06/12/guths-summer-beach-and-pool-tiles/",
-            "fileName": "tilesets/beach.png"
+            "subtype": "tilesets",
+            "fileName": "beach.png"
         }
     ]
 }
