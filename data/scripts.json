@@ -1,0 +1,17 @@
+{
+    "scripts":
+    [
+        {
+            "name": "Ace Message System",
+            "description": "Adds features to the message system, including name windows, converting textcodes to write out the icons and/or names of items, weapons, armours, message window size adjustment, separate fonts for messaging, text fast-forwarding, and more.",
+            "url": "https://github.com/Archeia/YEARepo/blob/master/Core/Ace_Message_System.rb",
+            "fileName": "ace_message_system.rb"
+        },
+        {
+            "name": "Advanced Game Time",
+            "description": "Provides a series of functions to set and recall current game time, as well customizable tints based on current game time to give the appearance of night and day in an advanced and customizable way.",
+            "url": "http://www.rpgmakervxace.net/topic/6145-advanced-game-time/",
+            "fileName": "advanced_game_time.rb"
+        }
+    ]
+}
