@@ -1,3 +1,5 @@
+'use strict';
+
 function showScripts() {
   document.getElementById('scriptsTable').style.display =  'block';
   document.getElementById('resourcesTable').style.display =  'none';
@@ -9,5 +11,3 @@ function showResources() {
 }
 
 showScripts();
-
-var app = angular.module('app', ['ngTable']);
