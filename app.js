@@ -9,7 +9,7 @@ function ($scope, $http, NgTableParams)
   this.githubRootUrl = githubRootUrl;  
   var self = this;
 
-  $http({ method: 'GET', url: 'data/scripts.json'}).success(function(data, status, headers, config) {
+  $http({ method: 'GET', url: 'data/vxa/scripts.json'}).success(function(data, status, headers, config) {
     self.tableParams = new NgTableParams({}, { dataset: data.scripts });
   });  
 }]);
@@ -20,7 +20,7 @@ function ($scope, $http, NgTableParams) {
 
   var self = this;
 
-  $http({ method: 'GET', url: 'data/graphics.json'}).success(function(data, status, headers, config) {
+  $http({ method: 'GET', url: 'data/vxa/graphics.json'}).success(function(data, status, headers, config) {
     self.tableParams = new NgTableParams({}, { dataset: data.graphics });
   });    
 }]);
