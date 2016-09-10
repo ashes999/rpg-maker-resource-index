@@ -1,0 +1,36 @@
+{
+    "graphics": [
+        {
+            "name": "The New Era (A1)",
+            "description": "A new, basic dark theme tileset for outdoors",
+            "url": "http://forums.rpgmakerweb.com/index.php?/topic/64531-grass-tilesets-the-new-era/",
+            "subtype": "tileset",
+            "fileName": "NewEra-Dark-Outside-A1.png",
+            "commercialAllowed": "yes"
+        },
+        {
+            "name": "The New Era (A2)",
+            "description": "A new, basic dark theme tileset for outdoors",
+            "url": "http://forums.rpgmakerweb.com/index.php?/topic/64531-grass-tilesets-the-new-era/",
+            "subtype": "tileset",
+            "fileName": "NewEra-Dark-Outside-A1.png",
+            "commercialAllowed": "yes"
+        },
+        {
+            "name": "The New Era (A3)",
+            "description": "A new, basic dark theme tileset for outdoors",
+            "url": "http://forums.rpgmakerweb.com/index.php?/topic/64531-grass-tilesets-the-new-era/",
+            "subtype": "tileset",
+            "fileName": "NewEra-Dark-Outside-A1.png",
+            "commercialAllowed": "yes"
+        },
+        {
+            "name": "The New Era (A4)",
+            "description": "A new, basic dark theme tileset for outdoors",
+            "url": "http://forums.rpgmakerweb.com/index.php?/topic/64531-grass-tilesets-the-new-era/",
+            "subtype": "tileset",
+            "fileName": "NewEra-Dark-Outside-A1.png",
+            "commercialAllowed": "yes"
+        }
+    ]
+}
