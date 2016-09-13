@@ -9,16 +9,18 @@ function ($scope, $http, NgTableParams)
   this.githubRootUrl = githubRootUrl;  
   var self = this;
 
-  // edition, eg. vxa, mv
-  // resourceType, eg. graphics, json (see data/vxa/graphics.json, data/vxa/scripts.json)
+  // Edition, eg. vxa, mv
+  // ResourceType, eg. graphics, json
+  // Result: look up a file, like data/vxa/graphics.json, data/vxa/scripts.json)
   $scope.show = function(edition, resourceType)
   {
-    console.log('show ' + edition + ' / ' + resourceType);
     $http({ method: 'GET', url: 'data/' + edition + '/' + resourceType + '.json'}).success(function(data, status, headers, config) {
-      console.log('got data back: ' + data.resources);
       self.tableParams = new NgTableParams({}, { dataset: data.resources });
     });
   }
+
+  // Start with this data
+  $scope.show('vxa', 'scripts');
 
 }]);
 
