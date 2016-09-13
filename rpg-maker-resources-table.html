@@ -1,0 +1,14 @@
+<table id="{{id}}" ng-table="controller.tableParams" class="table table-bordered table-striped" show-filter="true">
+    <tr ng-repeat="script in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{script.name}}</td>
+        <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">
+            {{script.description}}</td>
+        <td title="'Commercial Use Allowed?'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
+            {{resource.commercialAllowed}}</td>
+        <td title="'Links'">
+            <a ng-href="{{script.url}}">Home Page</a><br />
+            <a ng-href="{{controller.githubRootUrl}}/scripts/{{script.fileName}}">Repository Version</a>
+            </td>
+    </tr>
+</table>

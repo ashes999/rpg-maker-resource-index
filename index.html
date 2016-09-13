@@ -9,53 +9,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">    
     <script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>
   </head>
-  <body>
+  <body ng-controller="ResourcesController as controller">
     <div>
       <p>
-        <a href="#" onclick="showScripts();">Scripts</a> |
-        <a href="#" onclick="showResources();">Resources</a> |
-        <a href="http://github.com/ashes999/rpg-maker-resources">GitHub</a>
+        VX Ace: <a href="#" ng-click="show('vxa', 'scripts')">Scripts</a> /
+        <a href="#" ng-click="show('vxa', 'graphics')">Resources</a> ::
+
+        MV: <a href="#" ng-click="show('mv', 'scripts')">Scripts</a> /
+        <a href="#" ng-click="show('mv', 'graphics')">Resources</a> ::    
+            
+        View on <a href="http://github.com/ashes999/rpg-maker-resources">GitHub</a>
       </p>
     </div>
 
-    <div ng-controller="ScriptsController as controller">
-      <table id="scriptsTable" ng-table="controller.tableParams" class="table table-bordered table-striped" show-filter="true">
-        <tr ng-repeat="script in $data">
-            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-                {{script.name}}</td>
-            <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">
-                {{script.description}}</td>
-            <td title="'Commercial Use Allowed?'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
-                {{resource.commercialAllowed}}</td>
-            <td title="'Links'">
-                <a ng-href="{{script.url}}">Home Page</a><br />
-                <a ng-href="{{controller.githubRootUrl}}/scripts/{{script.fileName}}">Repository Version</a>
-                </td>
-        </tr>
-      </table>
-    </div>
-    
-    <div ng-controller="ResourcesController as controller">
-      <table id="resourcesTable" ng-table="controller.tableParams" class="table table-bordered table-striped" show-filter="true">
-        <tr ng-repeat="resource in $data">
-            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-                {{resource.name}}</td>
-            <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">
-                {{resource.description}}</td>
-            <td title="'Sub-Type'" filter="{ subtype: 'text' }" sortable="'subtype'">
-                {{resource.subtype}}</td>
-            <td title="'Commercial Use Allowed?'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
-                {{resource.commercialAllowed}}</td>
-            <td title="'Links'">
-                <a ng-href="{{resource.url}}">Home Page</a><br />
-                <a ng-href="{{controller.githubRootUrl}}/graphics/{{resource.subtype}}/{{resource.fileName}}">Repository Version</a>
-                </td>
-        </tr>
-      </table>
-    </div>
+    <rpg-resources-table id="scriptsTable-vxa" />
+    <rpg-resources-table id="graphicsTable-vxa"  />
+
+    <rpg-resources-table id="scriptsTable-mv" />
+    <rpg-resources-table id="graphicsTable-mv" />
 
     <script src="app.js"></script>    
-    <script src="functions.js"></script>
   </body>
 </html>
 
