@@ -20,11 +20,11 @@
     <div ng-controller="ScriptsController as controller">
       <table id="scriptsTable" ng-table="controller.tableParams" class="table" show-filter="true">
         <tr ng-repeat="script in $data">
-            <td title="Name" filter="{ name: 'text'}" sortable="'name'">
+            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
                 {{script.name}}</td>
-            <td title="Description" filter="{ description: 'text'}" sortable="'description'">
+            <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">
                 {{script.description}}</td>
-            <td title="Links">
+            <td title="'Links'">
                 <a ng-href="{{script.url}}">Home Page</a><br />
                 <a ng-href="{{controller.githubRootUrl}}/scripts/{{script.fileName}}">Repository Version</a>
                 </td>
@@ -35,15 +35,15 @@
     <div ng-controller="ResourcesController as controller">
       <table id="resourcesTable" ng-table="controller.tableParams" class="table" show-filter="true">
         <tr ng-repeat="resource in $data">
-            <td title="Name" filter="{ name: 'text'}" sortable="'name'">
+            <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
                 {{resource.name}}</td>
-            <td title="Description" filter="{ description: 'text'}" sortable="'description'">
+            <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">
                 {{resource.description}}</td>
-            <td title="Sub-Type" filter="{ subtype: 'text' }" sortable="'subtype'">
+            <td title="'Sub-Type'" filter="{ subtype: 'text' }" sortable="'subtype'">
                 {{resource.subtype}}</td>
-            <td title="CommercialUseAllowed" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
+            <td title="'Commercial Use'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
                 {{resource.commercialAllowed}}</td>
-            <td title="Links">
+            <td title="'Links'">
                 <a ng-href="{{resource.url}}">Home Page</a><br />
                 <a ng-href="{{controller.githubRootUrl}}/graphics/{{resource.subtype}}/{{resource.fileName}}">Repository Version</a>
                 </td>
