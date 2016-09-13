@@ -6,6 +6,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
     
     <link rel="stylesheet" href="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">    
     <script src="https://cdn.rawgit.com/esvit/ng-table/1.0.0/dist/ng-table.js"></script>
   </head>
   <body>
@@ -18,7 +19,7 @@
     </div>
 
     <div ng-controller="ScriptsController as controller">
-      <table id="scriptsTable" ng-table="controller.tableParams" class="table" show-filter="true">
+      <table id="scriptsTable" ng-table="controller.tableParams" class="table table-bordered table-striped" show-filter="true">
         <tr ng-repeat="script in $data">
             <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
                 {{script.name}}</td>
@@ -35,7 +36,7 @@
     </div>
     
     <div ng-controller="ResourcesController as controller">
-      <table id="resourcesTable" ng-table="controller.tableParams" class="table" show-filter="true">
+      <table id="resourcesTable" ng-table="controller.tableParams" class="table table-bordered table-striped" show-filter="true">
         <tr ng-repeat="resource in $data">
             <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
                 {{resource.name}}</td>
