@@ -1,0 +1,12 @@
+{
+    "scripts":
+    [
+        {
+            "name": "DoubleX RMMV Dynamic Data",
+            "description": "Stores the database changes done by users during game executions",
+            "url": "http://www.rpgmakercentral.com/topic/35441-doublex-rmmv-dynamic-data/",
+            "fileName": "DoubleX RMMV Dynamic Data v101d.js",
+            "commercialAllowed": "yes"
+        }
+    ]
+}

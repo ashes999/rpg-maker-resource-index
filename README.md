@@ -2,7 +2,10 @@
 
 [View the website](http://ashes999.github.io/rpg-maker-resources) where you can search for resources (eg. tilesets, portraits) and scripts (eg. time of day) for RPG Maker VXA games.
 
-**We keep a copy of everything.** You can still access scripts and resources even if the original author's website becomes unavailable.
+In contrast to other lists and collections, we sport two additional, integral advantages:
+
+- **We keep a copy of everything.** You can still access scripts and resources even if the original author's website becomes unavailable.
+- **All resources are on GitHub.** You can clone/download the repository and get a local copy of everything in one click.
 
 # How to Find Resources
 

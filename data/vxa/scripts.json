@@ -12,6 +12,13 @@
             "description": "Provides a series of functions to set and recall current game time, as well customizable tints based on current game time to give the appearance of night and day in an advanced and customizable way.",
             "url": "http://www.rpgmakervxace.net/topic/6145-advanced-game-time/",
             "fileName": "advanced_game_time.rb"
+        },
+        {
+            "name": "DoubleX RMVXA Dynamic Data",
+            "description": "Stores the database changes done by users during game executions",
+            "url": "https://rpgmaker.net/scripts/561/   ",
+            "fileName": "(DoubleX)Dynamic Data v1.00b.rb",
+            "commercialAllowed": "yes"
         }
     ]
 }

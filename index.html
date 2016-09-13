@@ -24,6 +24,8 @@
                 {{script.name}}</td>
             <td title="'Description'" filter="{ description: 'text'}" sortable="'description'">
                 {{script.description}}</td>
+            <td title="'Commercial Use Allowed?'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
+                {{resource.commercialAllowed}}</td>
             <td title="'Links'">
                 <a ng-href="{{script.url}}">Home Page</a><br />
                 <a ng-href="{{controller.githubRootUrl}}/scripts/{{script.fileName}}">Repository Version</a>
@@ -41,7 +43,7 @@
                 {{resource.description}}</td>
             <td title="'Sub-Type'" filter="{ subtype: 'text' }" sortable="'subtype'">
                 {{resource.subtype}}</td>
-            <td title="'Commercial Use'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
+            <td title="'Commercial Use Allowed?'" filter="{ commercialAllowed: 'text' }" sortable="'commercialAllowed'">
                 {{resource.commercialAllowed}}</td>
             <td title="'Links'">
                 <a ng-href="{{resource.url}}">Home Page</a><br />
