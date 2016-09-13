@@ -1,11 +1,12 @@
 # RPG Maker MV Resources
 
-[View the website](http://ashes999.github.io/rpg-maker-resources) where you can search for resources (eg. tilesets, portraits) and scripts (eg. time of day) for RPG Maker VXA games.
+[View the website](http://ashes999.github.io/rpg-maker-resources) where you can search for resources (eg. tilesets, portraits) and scripts (eg. time of day) for RPG Maker VX Ace and MV games.
 
-In contrast to other lists and collections, we sport two additional, integral advantages:
+Core features:
 
-- **We keep a copy of everything.** You can still access scripts and resources even if the original author's website becomes unavailable.
-- **All resources are on GitHub.** You can clone/download the repository and get a local copy of everything in one click.
+- **Searchable:** You can search for scripts and resources, including commercial license usage permissions.
+- **Always Accessible:** We keep copies of everything. If the original scripts or author's website goes down, you can still access scripts and resources.
+- **Offline Copy:** You can clone/download the GitHub repository and get a local copy of everything in one click.
 
 # How to Find Resources
 
